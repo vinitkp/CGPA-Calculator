@@ -1,0 +1,5 @@
+function change(){
+	document.getElementById("mainHeading").innerHTML("text changed");
+	
+	
+	}

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title> cpi calculator</title>
+<script type="text/javascript"  language="javascript" src="js/main.js"></script>
+</head>
+<body>
+<p id="mainHeading" onclick="change(this)"> Having trouble guessing your spi and cpi after this semester. here the perfect solution</p>
+<div id="sem 4">
+	<form>
+		<table>
+		<tr>
+		<td>Analog and Digital Communication </td>
+		<td><select name = "adcsel">
+											<option value="4.5" selected>4.5</option>
+											<option value = "4"> 4 </option>
+											<option value = "3"> 3 </option>
+										 </select> 
+		</td>
+		<td> <input type="text" name="adc" value="0"></td>
+				
+		</tr>
+		<tr>
+		<td>Analog Circuits</td>
+		<td> <select name = "acsel">
+							<option value="4.5" selected>4.5</option>
+							<option value = "4"> 4 </option>
+							<option value = "3"> 3 </option>
+						 </select>
+		</td>
+		<td> <input type="text" name="ac" value="0"></td>
+		</tr>
+		<tr>
+		<td>International business Finance </td>
+		<td><select name = "ibfsel">
+											<option value="4.5">4.5</option>
+											<option value = "4"> 4 </option>
+											<option value = "3" selected> 3 </option>
+										</select> 
+		</td>
+		<td><input type="text" name="ibf" value="0"></td>
+		</tr>
+		<tr>
+		<td>System Software</td> 
+		<td><select name = "sssel">
+							<option value="4.5" selected>4.5</option>
+							<option value = "4"> 4 </option>
+							<option value = "3"> 3 </option>
+						 </select>
+		</td> 
+		<td><input type="text" name="ss" value="0"></td>
+		</tr>
+		<tr>
+		<td>Environmental Studies </td>
+		<td><select name = "evssel">
+							<option value="4.5">4.5</option>
+							<option value = "4"> 4 </option>
+							<option value = "3" selected> 3 </option>
+						 </select></td>
+		<td> <input type="text" name="evs" value="0"></td>
+		</tr>
+		<tr>
+		<td>Probability</td>
+		<td> <select name = "probsel">
+							<option value="4.5">4.5</option>
+							<option value = "4" selected> 4 </option>
+							<option value = "3"> 3 </option>
+						 </select></td>
+		<td> <input type="text" name="prob" value="0"></td>
+		</tr>
+		<input type="button" value="calculate" name="calc" onclick = "sem4(this.form)">
+	</form>
+
+</div>
+<div id = "result"></div>
+</body>
+</html>
