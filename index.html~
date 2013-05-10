@@ -2,10 +2,12 @@
 <head>
 <title> cpi calculator</title>
 <script type="text/javascript"  language="javascript" src="js/main.js"></script>
+<link href = "bootstrap/css/bootstrap.css" rel = "stylesheet">
+<link href = "bootstrap/css/bootstrap-responsive.css" rel = "stylesheet">
 </head>
 <body>
-<p id="mainHeading" onclick="change(this)"> Having trouble guessing your spi and cpi after this semester. here the perfect solution</p>
-<div id="sem 4">
+<h2 id="mainHeading" onclick="change(this)"> Having trouble guessing your spi and cpi after this semester. here the perfect solution</h2>
+<div id="sem 4" class = "hero-unit">
 	<form>
 		<table>
 		<tr>
@@ -68,7 +70,7 @@
 		<td> <input type="text" name="prob" value="0"></td>
 		</tr>
 		</table>
-		<input type="button" value="calculate" name="calc" onclick = "sem4(this.form)">
+		<input type="button" value="calculate" class="btn btn-primary btn-large" name="calc" onclick = "sem4(this.form)">
 	</form>
 
 </div>
@@ -76,6 +78,7 @@
 <br/><br/><br/>
 <div id= "old things" style=" width = 100%">
 	<div id = "semwise" style = "float: left"; width : 50%">
+	<form>
 		<table>
 		<tr>
 		<td> Semester 1</td>
@@ -85,7 +88,6 @@
 		<td><input type = "text" name = "sem1creds"></td>
 		</tr>
 
-		<table>
 		<tr>
 		<td> Semester 2</td>
 		<td>SPI</td>
@@ -94,8 +96,47 @@
 		<td><input type = "text" name = "sem2creds"></td>
 		</tr>
 		
-	
-	
+		<tr>
+		<td> Semester 3</td>
+		<td>SPI</td>
+		<td><input type="text" name="sem3">&nbsp;&nbsp;&nbsp;</td>
+		<td>Credits </td>
+		<td><input type = "text" name = "sem3creds"></td>
+		</tr>
+		</table>
+		<input type="button" value="calculate" class="btn btn-primary btn-large" name="calcSemWise" onclick = "semWise(this.form)">
+	</form>
+	</div>
+	<div id = "oldcpi" style = "float: right"; width : 50%">
+		<form>
+		<table>
+		<tr>
+		<td>Old CPI</td>
+		<td><input type = "text" name = "old_cpi">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td>Old Total Credits</td>
+		<td><input type = "text" name = "tot_old_creds">
+		</tr>
+		</table>
+		<input type="button" value="calculate" class="btn btn-primary btn-large" name="calcOldCpi" onclick = "oldCpi(this.form)">
+		</form>
+	</div>
 </div>
+<div style="clear:both"></div>
+<div id = "cpi_res"></div>
+
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap-transition.js"></script>
+    <script src="bootstrap/js/bootstrap-alert.js"></script>
+    <script src="bootstrap/js/bootstrap-modal.js"></script>
+    <script src="bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="bootstrap/js/bootstrap-tab.js"></script>
+    <script src="bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="bootstrap/js/bootstrap-popover.js"></script>
+    <script src="bootstrap/js/bootstrap-button.js"></script>
+    <script src="bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="bootstrap/js/bootstrap-typeahead.js"></script>
+
 </body>
 </html>
