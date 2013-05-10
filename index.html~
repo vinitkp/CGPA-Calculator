@@ -6,7 +6,7 @@
 <link href = "bootstrap/css/bootstrap-responsive.css" rel = "stylesheet">
 </head>
 <body>
-<h2 id="mainHeading" onclick="change(this)"> Having trouble guessing your spi and cpi after this semester. here the perfect solution</h2>
+<h2 id="mainHeading" onclick="change(this)"> Having trouble guessing your spi and cpi after this semester. Here is the perfect solution</h2>
 <div id="sem 4" class = "hero-unit">
 	<form>
 		<table>
@@ -18,7 +18,7 @@
 											<option value = "3"> 3 </option>
 										 </select> 
 		</td>
-		<td> <input type="text" name="adc" value="0"></td>
+		<td> <input type="text" name="adc" placeholder = "0" ></td>
 				
 		</tr>
 		<tr>
@@ -29,7 +29,7 @@
 							<option value = "3"> 3 </option>
 						 </select>
 		</td>
-		<td> <input type="text" name="ac" value="0"></td>
+		<td> <input type="text" placeholder = "0" name="ac" ></td>
 		</tr>
 		<tr>
 		<td>International business Finance </td>
@@ -39,7 +39,7 @@
 											<option value = "3" selected> 3 </option>
 										</select> 
 		</td>
-		<td><input type="text" name="ibf" value="0"></td>
+		<td><input type="text" name="ibf" placeholder = "0" ></td>
 		</tr>
 		<tr>
 		<td>System Software</td> 
@@ -49,7 +49,7 @@
 							<option value = "3"> 3 </option>
 						 </select>
 		</td> 
-		<td><input type="text" name="ss" value="0"></td>
+		<td><input type="text" placeholder = "0" name="ss" ></td>
 		</tr>
 		<tr>
 		<td>Environmental Studies </td>
@@ -58,7 +58,7 @@
 							<option value = "4"> 4 </option>
 							<option value = "3" selected> 3 </option>
 						 </select></td>
-		<td> <input type="text" name="evs" value="0"></td>
+		<td> <input type="text" placeholder = "0" name="evs" ></td>
 		</tr>
 		<tr>
 		<td>Probability</td>
@@ -67,76 +67,70 @@
 							<option value = "4" selected> 4 </option>
 							<option value = "3"> 3 </option>
 						 </select></td>
-		<td> <input type="text" name="prob" value="0"></td>
+		<td> <input type="text" placeholder = "0" name="prob" ></td>
 		</tr>
 		</table>
 		<input type="button" value="calculate" class="btn btn-primary btn-large" name="calc" onclick = "sem4(this.form)">
 	</form>
 
 </div>
-<div id = "result"></div>
+<div id = "result" style = "background: #C00000; color:white; width: 80%; font-size: 30px; padding-top:15px; padding-bottom:15px;" ></div>
 <br/><br/><br/>
-<div id= "old things" style=" width = 100%">
-	<div id = "semwise" style = "float: left"; width : 50%">
+<div id= "old things" class = "row">
+	<div class = "hero-unit span6" id = "semwise" >
 	<form>
 		<table>
 		<tr>
-		<td> Semester 1</td>
-		<td>SPI</td>
-		<td><input type="text" name="sem1">&nbsp;&nbsp;&nbsp;</td>
-		<td>Credits </td>
-		<td><input type = "text" name = "sem1creds"></td>
+		
+		<td><input type="text" placeholder = "Semester 1 spi" name="sem1">&nbsp;&nbsp;&nbsp;</td>
+		
+		<td><input type = "text" placeholder = "credits" name = "sem1creds"></td>
 		</tr>
 
 		<tr>
-		<td> Semester 2</td>
-		<td>SPI</td>
-		<td><input type="text" name="sem2">&nbsp;&nbsp;&nbsp;</td>
-		<td>Credits </td>
-		<td><input type = "text" name = "sem2creds"></td>
+		
+		<td><input type="text" placeholder = "Semester 1 spi"  name="sem2">&nbsp;&nbsp;&nbsp;</td>
+		
+		<td><input type = "text" placeholder = "credits"  name = "sem2creds"></td>
 		</tr>
 		
 		<tr>
-		<td> Semester 3</td>
-		<td>SPI</td>
-		<td><input type="text" name="sem3">&nbsp;&nbsp;&nbsp;</td>
-		<td>Credits </td>
-		<td><input type = "text" name = "sem3creds"></td>
+		
+		<td><input type="text" placeholder = "Semester 1 spi"  name="sem3">&nbsp;&nbsp;&nbsp;</td>
+		
+		<td><input type = "text" placeholder = "credits"  name = "sem3creds"></td>
 		</tr>
 		</table>
-		<input type="button" value="calculate" class="btn btn-primary btn-large" name="calcSemWise" onclick = "semWise(this.form)">
+		<input type="button" value="calculate" class="btn btn-primary btn-large " name="calcSemWise" onclick = "semWise(this.form)">
 	</form>
 	</div>
-	<div id = "oldcpi" style = "float: right"; width : 50%">
-		<form>
+	<div id = "oldcpi" class = "hero-unit span4" >
+		<form class = "navbar-form">
 		<table>
 		<tr>
-		<td>Old CPI</td>
-		<td><input type = "text" name = "old_cpi">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		<td>Old Total Credits</td>
-		<td><input type = "text" name = "tot_old_creds">
+		<td><input type = "text" placeholder = "old CPI" name = "old_cpi"></td>
+		</tr>
+		<tr>
+		<td><input type = "text" placeholder = "total old credits" name = "tot_old_creds">
 		</tr>
 		</table>
-		<input type="button" value="calculate" class="btn btn-primary btn-large" name="calcOldCpi" onclick = "oldCpi(this.form)">
+		<input type="button" value="calculate" class="btn btn-primary btn-large " name="calcOldCpi" onclick = "oldCpi(this.form)">
 		</form>
 	</div>
 </div>
-<div style="clear:both"></div>
-<div id = "cpi_res"></div>
+<div id = "cpi_res" style = "background: #C00000; color:white; width: 80%; font-size: 30px; padding-top:15px; padding-bottom:15px;"></div>
+<div id = "save_div" class = "hero-unit">
+<table>
+<tr>
+<td><input type = "text" placeholder = "save your cpi in a text file" id = "fileName"></td>
+</tr>
+<tr>
+<td><input type = "button" name = "save" class="btn pull-right btn-primary btn-large" value = "Save Result" onclick = "fileSave()"></td>
+</tr>
+</table>
+</div>
 
-    <script src="bootstrap/js/jquery.js"></script>
-    <script src="bootstrap/js/bootstrap-transition.js"></script>
-    <script src="bootstrap/js/bootstrap-alert.js"></script>
-    <script src="bootstrap/js/bootstrap-modal.js"></script>
-    <script src="bootstrap/js/bootstrap-dropdown.js"></script>
-    <script src="bootstrap/js/bootstrap-scrollspy.js"></script>
-    <script src="bootstrap/js/bootstrap-tab.js"></script>
-    <script src="bootstrap/js/bootstrap-tooltip.js"></script>
-    <script src="bootstrap/js/bootstrap-popover.js"></script>
-    <script src="bootstrap/js/bootstrap-button.js"></script>
-    <script src="bootstrap/js/bootstrap-collapse.js"></script>
-    <script src="bootstrap/js/bootstrap-carousel.js"></script>
-    <script src="bootstrap/js/bootstrap-typeahead.js"></script>
+    
 
 </body>
 </html>

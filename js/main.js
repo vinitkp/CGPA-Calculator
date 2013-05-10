@@ -21,7 +21,7 @@ function oldCpi(form){
 	var cpi;
 	cpi = (oldcreds * oldcpi + spi * 23.5)/ (oldcreds + 23.5);
 	
-	document.getElementById("cpi_res").innerHTML = cpi;
+	document.getElementById("cpi_res").innerHTML = "your CPI is "+ cpi;
 
 }
 
@@ -45,7 +45,7 @@ function semWise(form){
 	old_cpi = old_cpi/old_creds;
 	var spi = getSpi();
 	var cpi = (old_cpi * old_creds + spi * 23.5)/ (23.5 + old_creds);
-	document.getElementById("cpi_res").innerHTML = cpi;
+	document.getElementById("cpi_res").innerHTML = "your CPI is "+ cpi;
 	
 }
 
@@ -54,4 +54,16 @@ function getSpi(){
 	var arr = spi_string.split(" ");
 	return arr[5];
 	
+}
+
+
+function fileSave(){
+	var filename = document.getElementById("fileName").value;
+	var text = document.getElementById("cpi_res").innerHTML;
+	var file = new Blob([text],{type: 'text/plain'});
+	
+	var link = document.createElement("a");
+	link.href = window.webkitURL.createObjectURL(file);
+	link.download = filename;
+	link.click();
 }
