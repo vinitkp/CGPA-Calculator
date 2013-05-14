@@ -12,6 +12,17 @@ function sem4(form){
 	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
 }
 
+function sem1(){
+	var tot_credits = 4.5 + 4.5 + 4 + 3;
+	var subj = new Array();
+	
+	for(var i = 1; i <= 4 ; i++)
+		subj[i] = document.getElementById("" + i).value;
+	var spi = (subj[1] * 4.5 + subj[2] * 4.5 + subj[3] * 4 + subj[4] * 3)/tot_credits;
+	console.log(spi);
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+}
+
 function oldCpi(form){
 	var oldcpi = parseFloat(form.old_cpi.value);
 	var oldcreds = parseFloat(form.tot_old_creds.value);
@@ -21,7 +32,7 @@ function oldCpi(form){
 	var cpi;
 	cpi = (oldcreds * oldcpi + spi * 23.5)/ (oldcreds + 23.5);
 	
-	document.getElementById("cpi_res").innerHTML = cpi;
+	document.getElementById("cpi_res").innerHTML = "your CPI is "+ cpi;
 
 }
 
@@ -45,7 +56,7 @@ function semWise(form){
 	old_cpi = old_cpi/old_creds;
 	var spi = getSpi();
 	var cpi = (old_cpi * old_creds + spi * 23.5)/ (23.5 + old_creds);
-	document.getElementById("cpi_res").innerHTML = cpi;
+	document.getElementById("cpi_res").innerHTML = "your CPI is "+ cpi;
 	
 }
 
@@ -66,4 +77,29 @@ function fileSave(){
 	link.href = window.webkitURL.createObjectURL(file);
 	link.download = filename;
 	link.click();
+}
+
+
+function getsem(){
+	var sem = document.getElementById("seminp").value;
+	console.log(sem);
+	var semdiv = document.getElementById("semesterCourses");
+	var cour = new Array();
+	for(var i = 1;i <=6;i++)
+		{cour[i] = document.getElementById("c-"+i);
+		}
+	var but = document.getElementById("calc-but");
+	if(sem == 1 )
+	{
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"Intro to Programming\" id = \"1\">";
+		cour[2].innerHTML = "<input type=\"text\" placeholder=\"Basic Electronic Circuits\" id = \"2\">";
+		cour[3].innerHTML = "<input type=\"text\" placeholder=\"Calculus and Complex variables\" id = \"3\">";
+		cour[4].innerHTML = "<input type=\"text\" placeholder=\"Indian society\" id = \"4\">";
+		cour[5].innerHTML = "";
+		cour[6].innerHTML = "";
+		but.innerHTML = "<input type =\"button\" value = \"Calculate\" onclick = \"sem1()\">";
+		
+
+		
+	}		
 }
