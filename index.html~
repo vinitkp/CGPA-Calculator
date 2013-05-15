@@ -15,11 +15,11 @@
 
 <div id="semesterCourses" class = "hero-unit">
 	<div id = "c-1"></div>
-	<div id = "c-1"></div>
-	<div id = "c-1"></div>
-	<div id = "c-1"></div>
-	<div id = "c-1"></div>
-	<div id = "c-1"></div>
+	<div id = "c-2"></div>
+	<div id = "c-3"></div>
+	<div id = "c-4"></div>
+	<div id = "c-5"></div>
+	<div id = "c-6"></div>
 	<div id = "calc-but"></div>
 
 
@@ -28,31 +28,14 @@
 <br/><br/><br/>
 <div id= "old things" class = "row">
 	<div class = "hero-unit span6" id = "semwise" >
-	<form>
-		<table>
-		<tr>
-		
-		<td><input type="text" placeholder = "Semester 1 spi" name="sem1">&nbsp;&nbsp;&nbsp;</td>
-		
-		<td><input type = "text" placeholder = "credits" name = "sem1creds"></td>
-		</tr>
+		<div id = "semwise-1"></div>
+		<div id = "semwise-2"></div>
+		<div id = "semwise-3"></div>
+		<div id = "semwise-4"></div>
+		<div id = "semwise-5"></div>
+		<div id = "semwise-6"></div>
+		<div id = "semwise-7"></div>
 
-		<tr>
-		
-		<td><input type="text" placeholder = "Semester 1 spi"  name="sem2">&nbsp;&nbsp;&nbsp;</td>
-		
-		<td><input type = "text" placeholder = "credits"  name = "sem2creds"></td>
-		</tr>
-		
-		<tr>
-		
-		<td><input type="text" placeholder = "Semester 1 spi"  name="sem3">&nbsp;&nbsp;&nbsp;</td>
-		
-		<td><input type = "text" placeholder = "credits"  name = "sem3creds"></td>
-		</tr>
-		</table>
-		<input type="button" value="calculate" class="btn btn-primary btn-large " name="calcSemWise" onclick = "semWise(this.form)">
-	</form>
 	</div>
 	<div id = "oldcpi" class = "hero-unit span4" >
 		<form class = "navbar-form">

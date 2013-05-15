@@ -21,16 +21,71 @@ function sem1(){
 	var spi = (subj[1] * 4.5 + subj[2] * 4.5 + subj[3] * 4 + subj[4] * 3)/tot_credits;
 	console.log(spi);
 	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	document.getElementById("cpi_res").innerHTML = "your CPI is "+ spi;
 }
+
+function sem2(){
+		var tot_cretits = 4.5*3 + 4 + 3;
+		var subj = new Array();
+	
+	for(var i = 1; i <= 5 ; i++)
+		subj[i] = document.getElementById( i).value;	
+		
+	var spi = (subj[1] * 4.5 + subj[2] * 4.5 + subj[3] * 4.5 + subj[4] * 4 + subj[5] * 3)/tot_credits;
+	console.log(spi);
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	}
+	
+function sem3(){
+		var tot_credits = 4.5*2 + 4*3 + 3;
+		var subj = new Array();
+	
+	for(var i = 1; i <= 6 ; i++)
+		subj[i] = document.getElementById( i).value;	
+		
+	var spi = (subj[1] * 4.5 + subj[2] * 4.5 + subj[3] * 4 + subj[4] * 4 + subj[5] * 3 + subj[6] * 4)/tot_credits;
+	console.log(spi);
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	
+	}
+		
+function sem4(){
+		var tot_credits = 4.5*3 + 4 + 3*2;
+		var subj = new Array();
+	
+	for(var i = 1; i <= 6 ; i++)
+		subj[i] = document.getElementById( i).value;	
+		
+	var spi = (subj[1] * 4.5 + subj[2] * 4.5 + subj[3] * 4.5 + subj[4] * 4 + subj[5] * 3 + subj[6] * 3)/tot_credits;
+	console.log(spi);
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	
+	}
 
 function oldCpi(form){
 	var oldcpi = parseFloat(form.old_cpi.value);
-	var oldcreds = parseFloat(form.tot_old_creds.value);
 	var spi_string = document.getElementById("result").innerHTML;
 	var temp_Arr = spi_string.split(" ");
 	var spi = parseFloat(temp_Arr[5]);
 	var cpi;
-	cpi = (oldcreds * oldcpi + spi * 23.5)/ (oldcreds + 23.5);
+	var sem = parseInt(document.getElementById("seminp").value);
+	console.log(sem);
+	switch(sem)
+	{
+		case 2:{
+				cpi = (16* oldcpi + spi * 20)/ (16 + 20);
+				break;
+			}
+	case 3:{
+				cpi = (36* oldcpi + spi * 24.5)/ (36 + 24.5);
+				console.log(cpi);
+				break;
+				}
+	case 4:{
+				cpi = (60.5 * oldcpi + spi * 24.5)/ (60.5 + 23.5);
+				break;
+				}
+	}
 	
 	document.getElementById("cpi_res").innerHTML = "your CPI is "+ cpi;
 
@@ -98,8 +153,52 @@ function getsem(){
 		cour[5].innerHTML = "";
 		cour[6].innerHTML = "";
 		but.innerHTML = "<input type =\"button\" value = \"Calculate\" onclick = \"sem1()\">";
+				
+	}
+	else if(sem == 2)
+	{
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"Introduction to Communication and Technology\" id = \"1\">";
+		cour[2].innerHTML = "<input type=\"text\" placeholder=\"Digital Logic Design\" id = \"2\">";
+		cour[3].innerHTML = "<input type=\"text\" placeholder=\"Obect Oriented Programming\" id = \"3\">";
+		cour[4].innerHTML = "<input type=\"text\" placeholder=\"Discrete Mats\" id = \"4\">";
+		cour[5].innerHTML = "<input type=\"text\" placeholder=\"Economics\" id = \"5\">";
+		cour[6].innerHTML = "";
+		but.innerHTML = "<input type =\"button\" value = \"Calculate\" onclick = \"sem2()\">";
 		
-
+		// cpi thing
+		document.getElementById("semwise-1").innerHTML = "<input type=\"text\" placeholder = \"Semester 1 spi\" name=\"sem1\">";
 		
-	}		
+		
+	}	
+	else if(sem == 3)
+	{
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"Data Structures and Algorithms\" id = \"1\">";
+		cour[2].innerHTML = "<input type=\"text\" placeholder=\"Comp Organization\" id = \"2\">";
+		cour[3].innerHTML = "<input type=\"text\" placeholder=\"Signals and Systems\" id = \"3\">";
+		cour[4].innerHTML = "<input type=\"text\" placeholder=\"Algebraic Structures\" id = \"4\">";
+		cour[5].innerHTML = "<input type=\"text\" placeholder=\"Science tech and Society\" id = \"5\">";
+		cour[6].innerHTML = "<input type=\"text\" placeholder=\"Electromagnetic Theory\" id = \"6\">";
+		but.innerHTML = "<input type =\"button\" value = \"Calculate\" onclick = \"sem3()\">";
+		
+		// cpi thing
+		document.getElementById("semwise-1").innerHTML = "<input type=\"text\" placeholder = \"Semester 1 spi\" name=\"sem1\">";
+		document.getElementById("semwise-2").innerHTML = "<input type=\"text\" placeholder = \"Semester 2 spi\" name=\"sem2\">";
+			
+	}
+	else if(sem == 4)
+	{
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"System Software\" id = \"1\">";
+		cour[2].innerHTML = "<input type=\"text\" placeholder=\"Analog Circuits\" id = \"2\">";
+		cour[3].innerHTML = "<input type=\"text\" placeholder=\"Analog and Digital Communication\" id = \"3\">";
+		cour[4].innerHTML = "<input type=\"text\" placeholder=\"Probabilty\" id = \"4\">";
+		cour[5].innerHTML = "<input type=\"text\" placeholder=\"Intenational Business Finance\" id = \"5\">";
+		cour[6].innerHTML = "<input type=\"text\" placeholder=\"Environmental Science\" id = \"6\">";
+		but.innerHTML = "<input type =\"button\" value = \"Calculate\" onclick = \"sem4()\">";
+		
+		// cpi thing
+		document.getElementById("semwise-1").innerHTML = "<input type=\"text\" placeholder = \"Semester 1 spi\" name=\"sem1\">";
+		document.getElementById("semwise-2").innerHTML = "<input type=\"text\" placeholder = \"Semester 2 spi\" name=\"sem2\">";
+		document.getElementById("semwise-3").innerHTML = "<input type=\"text\" placeholder = \"Semester 3 spi\" name=\"sem3\">";
+			
+	}	
 }
