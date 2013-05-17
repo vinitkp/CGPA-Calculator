@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$("#result").hide();
+	$("#cpi_res").hide();
+})
 function change(obj){
 	//alert("Fadsf");
 	obj.innerHTML="text changed";
@@ -69,6 +73,7 @@ function oldCpi(form){
 	var spi = parseFloat(temp_Arr[5]);
 	var cpi;
 	var sem = parseInt(document.getElementById("seminp").value);
+	console.log(sem);
 	switch(sem)
 	{
 		case 2:{
@@ -200,4 +205,24 @@ function getsem(){
 		document.getElementById("semwise-3").innerHTML = "<input type=\"text\" placeholder = \"Semester 3 spi\" name=\"sem3\">";
 			
 	}	
+	else if(sem == 5)
+	{
+		$("#myModal").modal({show:true});
+		var elective = new Array();
+		
+	}
+}
+
+function sem5_html(){
+	var cour = new Array();
+	for(var i = 1;i <=6;i++)
+		{cour[i] = document.getElementById("c-"+i);
+		}
+	var but = document.getElementById("calc-but");
+	cour[1].innerHTML = "<input type=\"text\" placeholder=\"Embedded Hardware Design\" id = \"1\">";
+	cour[2].innerHTML = "<input type=\"text\" placeholder=\"Computer Networks\" id = \"2\">";
+	cour[3].innerHTML = "<input type=\"text\" placeholder=\"Database Management Systems\" id = \"3\">";
+	cour[4].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-1").value+"\" id = \"4\">";
+	cour[5].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-2").value+"\" id = \"5\">";
+	cour[6].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-3").value+"\" id = \"6\">";	
 }
