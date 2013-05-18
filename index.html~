@@ -23,27 +23,17 @@
     <h3 id="myModalLabel">Enter your Electives</h3>
   </div>
   <div class="modal-body">
-    <div>Elective 1 <input type = "text" id ="elec-1" >&nbsp&nbsp&nbsp<select style = "width:70px;"id ="s-elec1">
-                                                                            <option value ="4.5" selected>4.5</option>
-                                                                            <option value ="4">4</option>
-                                                                            <option value = "3">3</option>
-                                                                         </select>
+    <div id = "d-elec1"></div>
+    <div id = "d-elec2">
     </div>
-    <div>Elective 2 <input type = "text" id ="elec-2" >&nbsp&nbsp&nbsp<select style = "width:70px;"id ="s-elec2">
-                                                                            <option value ="4.5">4.5</option>
-                                                                            <option value ="4" selected>4</option>
-                                                                            <option value = "3">3</option>
-                                                                         </select>
+    <div id = "d-elec3">
     </div>
-    <div>Elective 3 <input type = "text" id ="elec-3" >&nbsp&nbsp&nbsp<select style = "width:70px;"id ="s-elec3">
-                                                                            <option value ="4.5" selected>4.5</option>
-                                                                            <option value ="4">4</option>
-                                                                            <option value = "3">3</option>
-                                                                         </select>
-    </div>
+    <div id = "d-elec4"></div>
+    <div id = "d-elec5"></div>
+    <div id = "d-elec6"></div>
   </div>
   <div class="modal-footer">
-    <button class="btn btn-primary" onclick = "sem5_html()">Go</button>
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick = "sem5_html()">Go</button>
   </div>
 </div>
 
