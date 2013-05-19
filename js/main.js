@@ -109,8 +109,8 @@ function sem5(){
 	$("#result").focus();
 }
 function sem6(){
-	var subj = new Array()
-	var elec_cred = new Array();
+	var subj = new Array();	
+			var elec_cred = new Array();
 	var j = new Array();
 	for(var i=0;i<5;i++)
 		j[i] = isNaN(document.getElementById("elec-"+(i+1)).value);
@@ -140,8 +140,8 @@ function sem6(){
 	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
 	$("#result").fadeIn();
 	$("#result").focus();
+	
 }
-
 function sem7(){
 	var elec_cred = new Array();
 	var j = new Array();
@@ -155,7 +155,7 @@ function sem7(){
 		if(j[i])
 			{
 				sub++;
-				elec_cred[i]=document.getElementById("s-elec"+(i+1)).value;
+				elec_cred[i]=parseFloat(document.getElementById("s-elec"+(i+1)).value);
 				tot_credits +=elec_cred[i];
 			}
 	}
@@ -164,6 +164,7 @@ function sem7(){
 			subj[i] = document.getElementById( i).value;
 				cred_points += subj[i]* elec_cred[i-1];
 		}
+	
 	var spi = cred_points/tot_credits;	
 	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
 	$("#result").fadeIn();
@@ -184,24 +185,30 @@ function sem8(){
 		if(j[i])
 			{
 				sub++;
-				elec_cred[i]=document.getElementById("s-elec"+(i+1)).value;
+				elec_cred[i]=parseFloat(document.getElementById("s-elec"+(i+1)).value);
 				tot_credits +=elec_cred[i];
 			}
 	}
 	tot_credits += 15; 
+	console.log("cre "+tot_credits);
 	for(var i = 1; i <= sub; i++)
 		{
 			subj[i] = document.getElementById( i).value;
+			console.log(subj[i]);
 			if(i==1)
 				cred_points += subj[i] *15;
 			else
-				cred_points += subj[i]* elec_cred[i-1];
+				cred_points += subj[i]* elec_cred[i-2];
+			console.log("poi "+cred_points);
 		}
 	var spi = cred_points/tot_credits;	
+	console.log("spi = "+spi);
 	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
 	$("#result").fadeIn();
 	$("#result").focus();
 }
+
+
 
 
 
@@ -465,7 +472,7 @@ function sem_html(){
 		for(i=0;i<5;)
 		{
 			if(j[i++])
-				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \"4\">";
+				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \""+(i+1)+"\">";
 		}
 		but.innerHTML = "<input class = \"calc\" type =\"button\" value = \"Calculate\" onclick = \"sem6()\">";
 		for( var i = 1;i<=5;i++)
@@ -477,11 +484,11 @@ function sem_html(){
 		var j = new Array();
 		for(var i = 0;i<6;i++)
 			j[i] = isNaN(document.getElementById("elec-"+(i+1)).value);
-		var k=2;
+		var k=1;
 		for(i=0;i<6;)
 		{
 			if(j[i++])
-				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \"4\">";
+				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \""+(i)+"\">";
 		}
 		but.innerHTML = "<input class = \"calc\" type =\"button\" value = \"Calculate\" onclick = \"sem7()\">";
 		for( var i = 1;i<=6;i++)
@@ -497,9 +504,9 @@ function sem_html(){
 		for(i=0;i<4;)
 		{
 			if(j[i++])
-				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \"4\">";
+				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \""+(i+1)+"\">";
 		}
-		but.innerHTML = "<input class = \"calc\" type =\"button\" value = \"Calculate\" onclick = \"sem7()\">";
+		but.innerHTML = "<input class = \"calc\" type =\"button\" value = \"Calculate\" onclick = \"sem8()\">";
 		for( var i = 1;i<=6;i++)
 		document.getElementById("semwise-"+i).innerHTML = "<input type=\"text\" placeholder = \"Semester "+i+" spi\" name=\"sem"+i+"\">";
 	}
