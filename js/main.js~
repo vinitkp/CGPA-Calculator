@@ -26,7 +26,7 @@ function sem1(){
 }
 
 function sem2(){
-		var tot_cretits = 4.5*3 + 4 + 3;
+		var tot_credits = 4.5*3 + 4 + 3;
 		var subj = new Array();
 	
 	for(var i = 1; i <= 5 ; i++)
@@ -127,7 +127,7 @@ function sem6(){
 			}
 	}
 	tot_credits += 4.5;
-	console.log("cred "+tot_credits;
+	console.log("cred "+tot_credits);
 	for(var i = 1; i <= sub; i++)
 		{
 			subj[i] = document.getElementById(i).value;
@@ -208,12 +208,13 @@ function sem8(){
 
 function oldCpi(form){
 	var oldcpi = parseFloat(form.old_cpi.value);
+	console.log("cpi "+oldcpi);
 	var spi_string = document.getElementById("result").innerHTML;
 	var temp_Arr = spi_string.split(" ");
 	var spi = parseFloat(temp_Arr[5]);
+	console.log("spi "+spi);
 	var cpi;
 	var sem = parseInt(document.getElementById("seminp").value);
-	console.log(sem);
 	switch(sem)
 	{
 		case 2:{
@@ -232,6 +233,7 @@ function oldCpi(form){
 	}
 	
 	document.getElementById("cpi_res").innerHTML = "your CPI is "+ cpi;
+	$("#cpi_res").show();
 
 }
 
@@ -331,13 +333,13 @@ function getsem(){
 	}
 	else if(sem == 4)
 	{
-		cour[1].innerHTML = "<input type=\"text\" placeholder=\"System Software\" id = \"1\">";
-		cour[2].innerHTML = "<input type=\"text\" placeholder=\"Analog Circuits\" id = \"2\">";
-		cour[3].innerHTML = "<input type=\"text\" placeholder=\"Analog and Digital Communication\" id = \"3\">";
-		cour[4].innerHTML = "<input type=\"text\" placeholder=\"Probabilty\" id = \"4\">";
-		cour[5].innerHTML = "<input type=\"text\" placeholder=\"Intenational Business Finance\" id = \"5\">";
-		cour[6].innerHTML = "<input type=\"text\" placeholder=\"Environmental Science\" id = \"6\">";
-		but.innerHTML = "<input class =\"clac\" type =\"button\" value = \"Calculate\" onclick = \"sem4()\">";
+		cour[1].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">System Software</span>&nbsp&nbsp<input type=\"text\"  id = \"1\">";
+		cour[2].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Analog Circuits</span>&nbsp&nbsp<input type=\"text\" id = \"2\">";
+		cour[3].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Analog & Digital Communication</span>&nbsp&nbsp<input type=\"text\" id = \"3\">";
+		cour[4].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Probability</span>&nbsp&nbsp<input type=\"text\"  id = \"4\">";
+		cour[5].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Intenational Business Finance</span>&nbsp&nbsp<input type=\"text\" id = \"5\">";
+		cour[6].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Environmental Science</span>&nbsp&nbsp<input type=\"text\" place id = \"6\">";
+		but.innerHTML = "<input class =\"btn btn-success btn-large\" type =\"button\" value = \"Calculate\" onclick = \"sem4()\">";
 		
 		// cpi thing
 		document.getElementById("semwise-1").innerHTML = "<input type=\"text\" placeholder = \"Semester 1 spi\" name=\"sem1\">";
@@ -351,7 +353,7 @@ function getsem(){
 		for(var i = 0;i<3;i++)
 			{
 				d_elec[i] = document.getElementById("d-elec"+(i+1));
-				d_elec[i].innerHTML = "Elective "+(i+1)+ "   <input type = \"text\" id =\"elec-"+(i+1)+"\" >&nbsp&nbsp&nbsp"+
+				d_elec[i].innerHTML = "<span class=\"btn btn-danger\" style=\"margin-bottom:10px\">Elective "+(i+1)+ " </span>  <input type = \"text\" id =\"elec-"+(i+1)+"\" >&nbsp&nbsp&nbsp"+
 																		"<select style = \"width:70px;\"id =\"s-elec"+(i+1)+"\">"+
                                                                             "<option value =\"4.5\">4.5</option>"+
                                                                             "<option value =\"4\" selected>4</option>"+

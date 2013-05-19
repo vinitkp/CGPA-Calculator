@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <head>
 <title> cpi calculator</title>
@@ -11,16 +12,16 @@
 </head>
 
 <body >
-	<h2 id="mainHeading" onclick="change(this)"> Having trouble guessing your spi and cpi after this semester. Here is the perfect solution</h2>
-	<div id = "inputsem">
-		<input type="text" placeholder = "which semester?" id = "seminp">
-		<input type= "button" value="Go" onclick="getsem()">
+	<div class="" style="margin-top:0; "><h2 id="mainHeading" > Having trouble guessing your spi and cpi after this semester. Here is the perfect solution</h2></div>
+	<div id = "inputsem" >
+		<input type="text" placeholder = "which semester?" id = "seminp">&nbsp
+		<input type= "button" class="btn btn-success" value="Go" onclick="getsem()" style ="margin-bottom:10px;">
 	</div>
 	
 	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
+  <div class="modal-headers" >
     
-    <h3 id="myModalLabel">Enter your Electives</h3>
+    <h3 id="myModalLabel" style="padding-left:130px" >Enter your Electives</h3>
   </div>
   <div class="modal-body">
     <div id = "d-elec1"></div>
@@ -37,18 +38,18 @@
   </div>
 </div>
 
-<div id="semesterCourses" class = "hero-unit">
+<div id="semesterCourses" class = "hero-unit ">
 	<div id = "c-1"></div>
 	<div id = "c-2"></div>
 	<div id = "c-3"></div>
 	<div id = "c-4"></div>
 	<div id = "c-5"></div>
 	<div id = "c-6"></div>
-	<div id = "calc-but"></div>
+	<div id = "calc-but" ></div>
 
 
 </div>
-<div id = "result" style = "background: #C00000; color:white; width: 80%; font-size: 30px; padding-top:15px; padding-bottom:15px;" ></div>
+<div id = "result" class="row" style = "background: #C00000; color:white; width: 80%; font-size: 30px; padding-top:15px; padding-bottom:15px;" ></div>
 <br/><br/><br/>
 <div id= "old things" class = "row">
 	<div class = "hero-unit span6" id = "semwise" >
