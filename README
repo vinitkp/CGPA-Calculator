@@ -1,0 +1,8 @@
+TODO 
+1- SOLVE BUG in spi calculation of sem 6, 7, 8
+2- right cpi calculation of sem5 and onwards
+3- improve ui
+
+CGPA Calculator is written in javascript to calculate CGPA and SGPA of any student currently in any of the 8 semesters studying in DA-IICT.
+
+
