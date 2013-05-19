@@ -244,7 +244,9 @@ function oldCpi(form){
 	}
 	
 	document.getElementById("cpi_res").innerHTML = "your CPI is "+ cpi;
-	$("#cpi_res").show();
+	$("#cpi_res").fadeIn();
+	$("#cpi_res").focus();
+	
 
 }
 

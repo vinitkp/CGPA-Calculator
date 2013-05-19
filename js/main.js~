@@ -488,7 +488,7 @@ function sem_html(){
 		for(i=0;i<6;)
 		{
 			if(j[i++])
-				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \""+(i+1)+"\">";
+				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \""+(i)+"\">";
 		}
 		but.innerHTML = "<input class = \"calc\" type =\"button\" value = \"Calculate\" onclick = \"sem7()\">";
 		for( var i = 1;i<=6;i++)
