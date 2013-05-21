@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> cpi calculator</title>
+
+<script src="js/jq.js" type="text/javascript">
+</script>
+<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript"  language="javascript" src="js/main.js"></script>
+<link href = "bootstrap/css/bootstrap.css" rel = "stylesheet">
+<link href = "bootstrap/css/bootstrap-responsive.css" rel = "stylesheet">
+</head>
+
+<body >
+	<div class="" style="margin-top:0; "><h2 id="mainHeading" > Having trouble guessing your spi and cpi after this semester. Here is the perfect solution</h2></div>
+	<div id = "inputsem" >
+		<input type="text" placeholder = "which semester?" id = "seminp">&nbsp
+		<input type= "button" class="btn btn-success" value="Go" onclick="getsem()" style ="margin-bottom:10px;">
+	</div>
+	
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-headers" >
+    
+    <h3 id="myModalLabel" style="padding-left:130px" >Enter your Electives</h3>
+  </div>
+  <div class="modal-body">
+    <div id = "d-elec1"></div>
+    <div id = "d-elec2">
+    </div>
+    <div id = "d-elec3">
+    </div>
+    <div id = "d-elec4"></div>
+    <div id = "d-elec5"></div>
+    <div id = "d-elec6"></div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick = "sem_html()">Go</button>
+  </div>
+</div>
+
+<div id="semesterCourses" class = "hero-unit ">
+	<div id = "c-1"></div>
+	<div id = "c-2"></div>
+	<div id = "c-3"></div>
+	<div id = "c-4"></div>
+	<div id = "c-5"></div>
+	<div id = "c-6"></div>
+	<div id = "calc-but" ></div>
+
+
+</div>
+<div id = "result" class="row" style = "background: #E80000 ; color:white;;border-radius:5px; font-size: 30px;font-weight:bold;padding-left:300px; padding-top:15px; padding-bottom:15px;" ></div>
+<br/><br/><br/>
+<div id= "old things" class = "row">
+	<div class = "hero-unit span6" id = "semwise" >
+		<div id = "semwise-1"></div>
+		<div id = "semwise-2"></div>
+		<div id = "semwise-3"></div>
+		<div id = "semwise-4"></div>
+		<div id = "semwise-5"></div>
+		<div id = "semwise-6"></div>
+		<div id = "semwise-7"></div>
+
+	</div>
+	<div id = "oldcpi" class = "hero-unit span4" >
+		<form class = "navbar-form">
+		<table>
+		<tr>
+		<td><input type = "text" placeholder = "old CPI" name = "old_cpi"></td>
+		</tr>
+		</table>
+		<input type="button" value="calculate" class="btn btn-primary btn-large " name="calcOldCpi" onclick = "oldCpi(this.form)">
+		</form>
+	</div>
+</div>
+<div id = "cpi_res" style = "background: #E80000 ; color:white;;border-radius:5px; font-size: 30px;font-weight:bold;padding-left:300px; padding-top:15px; padding-bottom:15px;" ></div>
+<div id = "save_div" class = "hero-unit span6">
+<table>
+<tr>
+<td><input type = "text" placeholder = "save your cpi in a text file" id = "fileName"></td>
+</tr>
+<tr>
+<td><input type = "button" name = "save" class="btn pull-right btn-primary btn-large" value = "Save Result" onclick = "fileSave()"></td>
+</tr>
+</table>
+</div>
+
+    
+
+</body>
+</html>

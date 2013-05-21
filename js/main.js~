@@ -1,0 +1,513 @@
+//@author: Vinit Pandey
+$(document).ready(function(){
+	$("#result").hide();
+	$("#cpi_res").hide();
+})
+
+function change(obj){
+	//alert("Fadsf");
+	obj.innerHTML="text changed";
+	}
+	
+
+function sem1(){
+	var tot_credits = 4.5 + 4.5 + 4 + 3;
+	var subj = new Array();
+	
+	for(var i = 1; i <= 4 ; i++)
+		subj[i] = document.getElementById( i).value;
+	var spi = (subj[1] * 4.5 + subj[2] * 4.5 + subj[3] * 4 + subj[4] * 3)/tot_credits;
+	console.log(spi);
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	$("#result").fadeIn();
+	$("#result").focus();
+	
+	document.getElementById("cpi_res").innerHTML = "your CPI is "+ spi;
+}
+
+function sem2(){
+		var tot_credits = 4.5*3 + 4 + 3;
+		var subj = new Array();
+	
+	for(var i = 1; i <= 5 ; i++)
+		subj[i] = document.getElementById( i).value;	
+		
+	var spi = (subj[1] * 4.5 + subj[2] * 4.5 + subj[3] * 4.5 + subj[4] * 4 + subj[5] * 3)/tot_credits;
+	console.log(spi);
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	$("#result").fadeIn();
+	$("#result").focus();
+	}
+	
+function sem3(){
+		var tot_credits = 4.5*2 + 4*3 + 3;
+		var subj = new Array();
+	
+	for(var i = 1; i <= 6 ; i++)
+		subj[i] = document.getElementById( i).value;	
+		
+	var spi = (subj[1] * 4.5 + subj[2] * 4.5 + subj[3] * 4 + subj[4] * 4 + subj[5] * 3 + subj[6] * 4)/tot_credits;
+	console.log(spi);
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	$("#result").fadeIn();
+	$("#result").focus();
+	}
+		
+function sem4(){
+		var tot_credits = 4.5*3 + 4 + 3*2;
+		var subj = new Array();
+	
+	for(var i = 1; i <= 6 ; i++)
+		subj[i] = document.getElementById( i).value;	
+		
+	var spi = (subj[1] * 4.5 + subj[2] * 4.5 + subj[3] * 4.5 + subj[4] * 4 + subj[5] * 3 + subj[6] * 3)/tot_credits;
+	console.log(spi);
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	$("#result").fadeIn();
+	$("#result").focus();
+	}
+function sem5(){
+	var elec_cred = new Array();
+	var subj = new Array();
+	/*for(var i = 1; i <= 6 ; i++)
+		{
+			subj[i] = document.getElementById( i).value;
+			console.log(subj[i]);
+		}*/
+		var j = new Array();
+	j[0] = isNaN(document.getElementById("elec-1").value);
+	j[1] = isNaN(document.getElementById("elec-2").value);
+	j[2] = isNaN(document.getElementById("elec-3").value); // sorry for not using a loop :P
+	var tot_credits = 0;
+	var sub =3, cred_points =0;
+	var elec_cred = new Array();
+	for(var i = 0;i<3; i++)
+	{
+		if(j[i])
+			{
+				sub++;
+				elec_cred[i]=parseFloat(document.getElementById("s-elec"+(i+1)).value);
+				console.log("elec "+elec_cred[i]);
+				tot_credits +=elec_cred[i];
+			}
+	}
+	tot_credits += 4.5*3;
+	console.log("credits "+tot_credits);
+		for(i = 1; i <= sub; i++)
+		{
+			subj[i] = document.getElementById( i).value;
+			console.log(subj[i]);
+			if(i<4)
+				cred_points += subj[i]*4.5;
+			else
+				cred_points += subj[i]* elec_cred[i-4];
+			
+		}
+		var spi = cred_points/tot_credits;	
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	$("#result").fadeIn();
+	$("#result").focus();
+}
+function sem6(){
+	var subj = new Array();	
+			var elec_cred = new Array();
+	var j = new Array();
+	for(var i=0;i<5;i++)
+		j[i] = isNaN(document.getElementById("elec-"+(i+1)).value);
+	var tot_credits = 0;
+	var sub =1, cred_points =0;
+	var elec_cred = new Array();
+	for(var i = 0;i<5; i++)
+	{
+		if(j[i])
+			{
+				sub++;
+				elec_cred[i]=parseFloat(document.getElementById("s-elec"+(i+1)).value);
+				tot_credits +=elec_cred[i];
+			}
+	}
+	tot_credits += 4.5;
+	console.log("cred "+tot_credits);
+	for(var i = 1; i <= sub; i++)
+		{
+			subj[i] = document.getElementById(i).value;
+			if(i==1)
+				cred_points += subj[i] *4.5;
+			else
+				cred_points += subj[i]* elec_cred[i-2];
+		}
+	var spi = cred_points/tot_credits;	
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	$("#result").fadeIn();
+	$("#result").focus();
+	
+}
+function sem7(){
+	var elec_cred = new Array();
+	var j = new Array();
+	for(var i=0;i<6;i++)
+		j[i] = isNaN(document.getElementById("elec-"+(i+1)).value);
+	var tot_credits = 0, subj = new Array();
+	var sub =0, cred_points =0;
+	var elec_cred = new Array();
+	for(var i = 0;i<6; i++)
+	{
+		if(j[i])
+			{
+				sub++;
+				elec_cred[i]=parseFloat(document.getElementById("s-elec"+(i+1)).value);
+				tot_credits +=elec_cred[i];
+			}
+	}
+	for(var i = 1; i <= sub; i++)
+		{
+			subj[i] = document.getElementById( i).value;
+				cred_points += subj[i]* elec_cred[i-1];
+		}
+	
+	var spi = cred_points/tot_credits;	
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	$("#result").fadeIn();
+	$("#result").focus();
+}
+
+function sem8(){
+	var elec_cred = new Array();
+	var subj = new Array();
+	var j = new Array();
+	for(var i=0;i<4;i++)
+		j[i] = isNaN(document.getElementById("elec-"+(i+1)).value);
+	var tot_credits = 0;
+	var sub =1, cred_points =0;
+	var elec_cred = new Array();
+	for(var i = 0;i<4; i++)
+	{
+		if(j[i])
+			{
+				sub++;
+				elec_cred[i]=parseFloat(document.getElementById("s-elec"+(i+1)).value);
+				tot_credits +=elec_cred[i];
+			}
+	}
+	tot_credits += 15; 
+	console.log("cre "+tot_credits);
+	for(var i = 1; i <= sub; i++)
+		{
+			subj[i] = document.getElementById( i).value;
+			console.log(subj[i]);
+			if(i==1)
+				cred_points += subj[i] *15;
+			else
+				cred_points += subj[i]* elec_cred[i-2];
+			console.log("poi "+cred_points);
+		}
+	var spi = cred_points/tot_credits;	
+	console.log("spi = "+spi);
+	document.getElementById("result").innerHTML = "your SPI this semester is "+ spi;
+	$("#result").fadeIn();
+	$("#result").focus();
+}
+
+
+
+
+
+
+function oldCpi(form){
+	var oldcpi = parseFloat(form.old_cpi.value);
+	console.log("cpi "+oldcpi);
+	var spi_string = document.getElementById("result").innerHTML;
+	var temp_Arr = spi_string.split(" ");
+	var spi = parseFloat(temp_Arr[5]);
+	console.log("spi "+spi);
+	var cpi;
+	var sem = parseInt(document.getElementById("seminp").value);
+	switch(sem)
+	{
+		case 2:{
+				cpi = (16* oldcpi + spi * 20)/ (16 + 20);
+				break;
+			}
+	case 3:{
+				cpi = (36* oldcpi + spi * 24.5)/ (36 + 24.5);
+				console.log(cpi);
+				break;
+				}
+	case 4:{
+				cpi = (60.5 * oldcpi + spi * 24.5)/ (60.5 + 23.5);
+				break;
+				}
+	case 5:{
+				cpi = (84 * oldcpi + spi * 24.5)/ (84 + document.getElement);
+				break;
+				}
+	}
+	
+	document.getElementById("cpi_res").innerHTML = "your CPI is "+ cpi;
+	$("#cpi_res").show();
+
+}
+
+function semWise(form){
+	var cpi = new Array();
+	cpi[0] = parseFloat(form.sem1.value);
+	cpi[1] = parseFloat(form.sem2.value);
+	cpi[2] = parseFloat(form.sem3.value);
+	var credits = new Array();
+	credits[0] = parseFloat(form.sem1creds.value);
+	credits[1] = parseFloat(form.sem2creds.value);
+	credits[2] = parseFloat(form.sem3creds.value);
+	
+	var old_cpi = 0, old_creds = 0;
+	var i = 0;
+	for(i = 0; i<3; i++)
+		{
+			old_cpi = old_cpi + credits[i] *cpi[i];
+			old_creds = old_creds + credits[i];
+		}
+	old_cpi = old_cpi/old_creds;
+	var spi = getSpi();
+	var cpi = (old_cpi * old_creds + spi * 23.5)/ (23.5 + old_creds);
+	document.getElementById("cpi_res").innerHTML = "your CPI is "+ cpi;
+	
+}
+
+function getSpi(){
+	var spi_string = document.getElementById("result").innerHTML;
+	var arr = spi_string.split(" ");
+	return arr[5];
+	
+}
+
+
+function fileSave(){
+	var filename = document.getElementById("fileName").value;
+	var text = document.getElementById("cpi_res").innerHTML;
+	var file = new Blob([text],{type: 'text/plain'});
+	
+	var link = document.createElement("a");
+	link.href = window.webkitURL.createObjectURL(file);
+	link.download = filename;
+	link.click();
+}
+
+
+function getsem(){
+	var sem = document.getElementById("seminp").value;
+	console.log(sem);
+	var semdiv = document.getElementById("semesterCourses");
+	var cour = new Array();
+	for(var i = 1;i <=6;i++)
+		{cour[i] = document.getElementById("c-"+i);
+		}
+	var but = document.getElementById("calc-but");
+	if(sem == 1 )
+	{
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"Intro to Programming\" id = \"1\">";
+		cour[2].innerHTML = "<input type=\"text\" placeholder=\"Basic Electronic Circuits\" id = \"2\">";
+		cour[3].innerHTML = "<input type=\"text\" placeholder=\"Calculus and Complex variables\" id = \"3\">";
+		cour[4].innerHTML = "<input type=\"text\" placeholder=\"Indian society\" id = \"4\">";
+		cour[5].innerHTML = "";
+		cour[6].innerHTML = "";
+		but.innerHTML = "<input id =\"clac\" type =\"button\" value = \"Calculate\" onclick = \"sem1()\">";
+				
+	}
+	else if(sem == 2)
+	{
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"Introduction to Communication and Technology\" id = \"1\">";
+		cour[2].innerHTML = "<input type=\"text\" placeholder=\"Digital Logic Design\" id = \"2\">";
+		cour[3].innerHTML = "<input type=\"text\" placeholder=\"Obect Oriented Programming\" id = \"3\">";
+		cour[4].innerHTML = "<input type=\"text\" placeholder=\"Discrete Mats\" id = \"4\">";
+		cour[5].innerHTML = "<input type=\"text\" placeholder=\"Economics\" id = \"5\">";
+		cour[6].innerHTML = "";
+		but.innerHTML = "<input class =\"clac\" type =\"button\" value = \"Calculate\" onclick = \"sem2()\">";
+		
+		// cpi thing
+		document.getElementById("semwise-1").innerHTML = "<input type=\"text\" placeholder = \"Semester 1 spi\" name=\"sem1\">";
+		
+		
+	}	
+	else if(sem == 3)
+	{
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"Data Structures and Algorithms\" id = \"1\">";
+		cour[2].innerHTML = "<input type=\"text\" placeholder=\"Comp Organization\" id = \"2\">";
+		cour[3].innerHTML = "<input type=\"text\" placeholder=\"Signals and Systems\" id = \"3\">";
+		cour[4].innerHTML = "<input type=\"text\" placeholder=\"Algebraic Structures\" id = \"4\">";
+		cour[5].innerHTML = "<input type=\"text\" placeholder=\"Science tech and Society\" id = \"5\">";
+		cour[6].innerHTML = "<input type=\"text\" placeholder=\"Electromagnetic Theory\" id = \"6\">";
+		but.innerHTML = "<input class =\"clac\" type =\"button\" value = \"Calculate\" onclick = \"sem3()\">";
+		
+		// cpi thing
+		document.getElementById("semwise-1").innerHTML = "<input type=\"text\" placeholder = \"Semester 1 spi\" name=\"sem1\">";
+		document.getElementById("semwise-2").innerHTML = "<input type=\"text\" placeholder = \"Semester 2 spi\" name=\"sem2\">";
+			
+	}
+	else if(sem == 4)
+	{
+		cour[1].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">System Software</span>&nbsp&nbsp<input type=\"text\"  id = \"1\">";
+		cour[2].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Analog Circuits</span>&nbsp&nbsp<input type=\"text\" id = \"2\">";
+		cour[3].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Analog & Digital Communication</span>&nbsp&nbsp<input type=\"text\" id = \"3\">";
+		cour[4].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Probability</span>&nbsp&nbsp<input type=\"text\"  id = \"4\">";
+		cour[5].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Intenational Business Finance</span>&nbsp&nbsp<input type=\"text\" id = \"5\">";
+		cour[6].innerHTML = "<span class=\"btn btn-danger span3\" style=\"margin-bottom:10px\">Environmental Science</span>&nbsp&nbsp<input type=\"text\" place id = \"6\">";
+		but.innerHTML = "<input class =\"btn btn-success btn-large\" type =\"button\" value = \"Calculate\" onclick = \"sem4()\">";
+		
+		// cpi thing
+		document.getElementById("semwise-1").innerHTML = "<input type=\"text\" placeholder = \"Semester 1 spi\" name=\"sem1\">";
+		document.getElementById("semwise-2").innerHTML = "<input type=\"text\" placeholder = \"Semester 2 spi\" name=\"sem2\">";
+		document.getElementById("semwise-3").innerHTML = "<input type=\"text\" placeholder = \"Semester 3 spi\" name=\"sem3\">";
+			
+	}	
+	else if(sem == 5)
+	{
+		var d_elec = new Array();
+		for(var i = 0;i<3;i++)
+			{
+				d_elec[i] = document.getElementById("d-elec"+(i+1));
+				d_elec[i].innerHTML = "<span class=\"btn btn-danger\" style=\"margin-bottom:10px\">Elective "+(i+1)+ " </span>  <input type = \"text\" id =\"elec-"+(i+1)+"\" >&nbsp&nbsp&nbsp"+
+																		"<select style = \"width:70px;\"id =\"s-elec"+(i+1)+"\">"+
+                                                                            "<option value =\"4.5\">4.5</option>"+
+                                                                            "<option value =\"4\" selected>4</option>"+
+                                                                            "<option value = \"3\">3</option>"+
+                                                                         "</select>";
+			}
+		$("#myModal").modal({show:true});
+		
+	}
+	else if(sem == 6)
+	{
+		var d_elec = new Array();
+		for(var i = 0;i<5;i++)
+			{
+				d_elec[i] = document.getElementById("d-elec"+(i+1));
+				d_elec[i].innerHTML = "Elective "+(i+1)+ "   <input type = \"text\" id =\"elec-"+(i+1)+"\" >&nbsp&nbsp&nbsp"+
+																		"<select style = \"width:70px;\"id =\"s-elec"+(i+1)+"\">"+
+                                                                            "<option value =\"4.5\">4.5</option>"+
+                                                                            "<option value =\"4\" selected>4</option>"+
+                                                                            "<option value = \"3\">3</option>"+
+                                                                         "</select>";
+			}
+		$("#myModal").modal({show:true});
+		var elective = new Array();
+		
+	}
+	else if(sem == 7)
+	{
+		var d_elec = new Array();
+		for(var i = 0;i<6;i++)
+			{
+				d_elec[i] = document.getElementById("d-elec"+(i+1));
+				d_elec[i].innerHTML = "Elective "+(i+1)+ "   <input type = \"text\" id =\"elec-"+(i+1)+"\" >&nbsp&nbsp&nbsp"+
+																		"<select style = \"width:70px;\"id =\"s-elec"+(i+1)+"\">"+
+                                                                            "<option value =\"4.5\">4.5</option>"+
+                                                                            "<option value =\"4\" selected>4</option>"+
+                                                                            "<option value = \"3\">3</option>"+
+                                                                         "</select>";
+			}
+		$("#myModal").modal({show:true});
+		var elective = new Array();
+		
+		
+	}
+		else if(sem == 8)
+	{
+		var d_elec = new Array();
+		for(var i = 0;i<4;i++)
+			{
+				d_elec[i] = document.getElementById("d-elec"+(i+1));
+				d_elec[i].innerHTML = "Elective "+(i+1)+ "   <input type = \"text\" id =\"elec-"+(i+1)+"\" >&nbsp&nbsp&nbsp"+
+																		"<select style = \"width:70px;\"id =\"s-elec"+(i+1)+"\">"+
+                                                                            "<option value =\"4.5\">4.5</option>"+
+                                                                            "<option value =\"4\" selected>4</option>"+
+                                                                            "<option value = \"3\">3</option>"+
+                                                                         "</select>";
+			}
+		$("#myModal").modal({show:true});
+		var elective = new Array();
+		
+		
+	}
+}
+
+function sem_html(){
+	var sem = document.getElementById("seminp").value;
+	var cour = new Array();
+	for(var i = 1;i <=6;i++)
+		{cour[i] = document.getElementById("c-"+i);
+		}
+	var but = document.getElementById("calc-but");
+	if(sem == 5)
+	{
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"Embedded Hardware Design\" id = \"1\">";
+		cour[2].innerHTML = "<input type=\"text\" placeholder=\"Computer Networks\" id = \"2\">";
+		cour[3].innerHTML = "<input type=\"text\" placeholder=\"Database Management Systems\" id = \"3\">";
+		var j = new Array();
+		j[0] = isNaN(document.getElementById("elec-1").value);
+		j[1] = isNaN(document.getElementById("elec-2").value);
+		j[2] = isNaN(document.getElementById("elec-3").value);
+		var k=4;
+		for(i=0;i<3;)
+		{
+			if(j[i++])
+				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \""+(i+3)+"\">";
+		}
+		/*cour[4].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-1").value+"\" id = \"4\">";
+		cour[5].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-2").value+"\" id = \"5\">";
+		cour[6].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-3").value+"\" id = \"6\">";	*/
+		but.innerHTML = "<input type =\"button\" value = \"Calculate\" onclick = \"sem5()\">";
+	
+		document.getElementById("semwise-1").innerHTML = "<input type=\"text\" placeholder = \"Semester 1 spi\" name=\"sem1\">";
+		document.getElementById("semwise-2").innerHTML = "<input type=\"text\" placeholder = \"Semester 2 spi\" name=\"sem2\">";
+		document.getElementById("semwise-3").innerHTML = "<input type=\"text\" placeholder = \"Semester 3 spi\" name=\"sem3\">";
+		document.getElementById("semwise-4").innerHTML = "<input type=\"text\" placeholder = \"Semester 4 spi\" name=\"sem4\">";
+	}
+	else if(sem == 6)
+	{
+		
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"Software Engineering :O\" id = \"1\">";
+		var j = new Array();
+		for(var i = 0;i<5;i++)
+			j[i] = isNaN(document.getElementById("elec-"+(i+1)).value);
+		var k=2;
+		for(i=0;i<5;)
+		{
+			if(j[i++])
+				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \""+(i+1)+"\">";
+		}
+		but.innerHTML = "<input class = \"calc\" type =\"button\" value = \"Calculate\" onclick = \"sem6()\">";
+		for( var i = 1;i<=5;i++)
+		document.getElementById("semwise-"+i).innerHTML = "<input type=\"text\" placeholder = \"Semester "+i+" spi\" name=\"sem"+i+"\">";
+	}
+	else if(sem == 7)
+	{
+		
+		var j = new Array();
+		for(var i = 0;i<6;i++)
+			j[i] = isNaN(document.getElementById("elec-"+(i+1)).value);
+		var k=1;
+		for(i=0;i<6;)
+		{
+			if(j[i++])
+				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \""+(i)+"\">";
+		}
+		but.innerHTML = "<input class = \"calc\" type =\"button\" value = \"Calculate\" onclick = \"sem7()\">";
+		for( var i = 1;i<=6;i++)
+		document.getElementById("semwise-"+i).innerHTML = "<input type=\"text\" placeholder = \"Semester "+i+" spi\" name=\"sem"+i+"\">";
+	}
+		else if(sem == 8)
+	{
+		cour[1].innerHTML = "<input type=\"text\" placeholder=\"BTP\" id = \"1\">";
+		var j = new Array();
+		for(var i = 0;i<4;i++)
+			j[i] = isNaN(document.getElementById("elec-"+(i+1)).value);
+		var k=2;
+		for(i=0;i<4;)
+		{
+			if(j[i++])
+				cour[k++].innerHTML = "<input type=\"text\" placeholder=\""+document.getElementById("elec-"+i).value+"\" id = \""+(i+1)+"\">";
+		}
+		but.innerHTML = "<input class = \"calc\" type =\"button\" value = \"Calculate\" onclick = \"sem8()\">";
+		for( var i = 1;i<=6;i++)
+		document.getElementById("semwise-"+i).innerHTML = "<input type=\"text\" placeholder = \"Semester "+i+" spi\" name=\"sem"+i+"\">";
+	}
+}
